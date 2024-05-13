@@ -27,7 +27,7 @@ function applyDiscount(discount) {
 
 function submitCarNo() {
     if (carNo.length === 4) {
-        fetch(`http://43.203.182.213:32323/discount/${encodeURIComponent(carNo)}`)
+        fetch(`http://52.79.137.65:32323/discount/${encodeURIComponent(carNo)}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('차량을 찾을 수 없습니다.');
@@ -88,7 +88,7 @@ function showCarSelectionModal(cars) {
 }
 
 function selectCar(carNo) {
-    fetch(`http://43.203.182.213:32323/discount-by-number/${encodeURIComponent(carNo)}`) // 클릭된 차량 번호를 전달
+    fetch(`http://52.79.137.65:32323/discount-by-number/${encodeURIComponent(carNo)}`) // 클릭된 차량 번호를 전달
         .then(response => {
             if (!response.ok) {
                 throw new Error('차량을 찾을 수 없습니다.');
@@ -116,7 +116,7 @@ function submitDiscount() {
     var discount = selectedDiscountBtn.innerText.split(": ")[1];
 
     if (carNo !== '----') {
-        fetch(`http://43.203.182.213:32323/discount/${encodeURIComponent(carNo)}`)
+        fetch(`http://52.79.137.65:32323/discount/${encodeURIComponent(carNo)}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error('차량을 찾을 수 없습니다.');
@@ -144,7 +144,7 @@ function submitDiscount() {
 function updateDiscountInfo(carInfo, discount) {
     var carNo = carInfo.cno;
 
-    var requestUrl = `http://43.203.182.213:32323/discount/${encodeURIComponent(carNo)}/discount?disc=${encodeURIComponent(discount)}`;
+    var requestUrl = `http://52.79.137.65:32323/discount/${encodeURIComponent(carNo)}/discount?disc=${encodeURIComponent(discount)}`;
 
     fetch(requestUrl, {
         method: 'PUT',

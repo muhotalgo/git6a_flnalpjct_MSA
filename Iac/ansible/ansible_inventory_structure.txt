@@ -1,17 +1,17 @@
 kube:
   hosts:
-    54.180.160.143:
+    52.79.137.65:
       ansible_user: ubuntu
-    3.35.132.175:
+    52.79.253.215:
       ansible_user: ubuntu
-    13.125.228.121:
+    52.78.159.56:
       ansible_user: ubuntu
-    43.203.182.213:
+    3.35.230.208:
       ansible_user: ubuntu
 
 kubemaster:
   hosts:
-    54.180.160.143:
+    52.79.137.65:
       ansible_user: ubuntu
 
 monitoring:

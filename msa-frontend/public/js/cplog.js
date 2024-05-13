@@ -29,7 +29,7 @@ dtrdo.addEventListener('change', () => {
 
 // 할인권 전체 정보 조회
 const getCouponInfo = async () => {
-    const alres = await fetch(`http://43.203.182.213:32322/coupons`)
+    const alres = await fetch(`http://52.79.137.65:32322/coupons`)
     if (alres.ok) {
         const aldata = await alres.json()
         return aldata;
@@ -40,7 +40,7 @@ const getCouponInfo = async () => {
 
 // 할인권 전체 검색 조회
 const findCouponInfo = async (skey) => {
-    const alres = await fetch(`http://43.203.182.213:32322/cpfind/${skey}`)
+    const alres = await fetch(`http://52.79.137.65:32322/cpfind/${skey}`)
     if (alres.ok) {
         const aldata = await alres.json()
         console.log(aldata);
@@ -53,7 +53,7 @@ const findCouponInfo = async (skey) => {
 // 할인권 첫페이지 검색 조회
 const findCouponInfoPage = async (skey, idx) => {
     if (idx === undefined || idx === null) idx = 1;
-    const res = await fetch(`http://43.203.182.213:32322/cpfind/${skey}/${idx}`)
+    const res = await fetch(`http://52.79.137.65:32322/cpfind/${skey}/${idx}`)
     if (res.ok) {
         const data = await res.json()
         //console.log(data);
@@ -66,7 +66,7 @@ const findCouponInfoPage = async (skey, idx) => {
 // 할인권 첫페이지 정보 조회
 const getCouponInfoPage = async (idx) => {
     if (idx === undefined || idx === null) idx = 1;
-    const res = await fetch(`http://43.203.182.213:32322/coupons/${idx}`)
+    const res = await fetch(`http://52.79.137.65:32322/coupons/${idx}`)
     if (res.ok) {
         const data = await res.json()
         //console.log(data);

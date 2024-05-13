@@ -14,7 +14,7 @@ loginbtn.addEventListener('click', async (e) => {
     }
 
     try {
-        const res = await fetch('http://43.203.182.213:32324/login', {
+        const res = await fetch('http://52.79.137.65:32324/login', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({

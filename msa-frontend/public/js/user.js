@@ -3,7 +3,7 @@ const loginbtn = document.querySelector('#loginbtn');
 
 
 const getUserInfo = async () => {
-  const res = await fetch('http://43.203.182.213:8010/users');
+  const res = await fetch('http://52.79.137.65:8030/member');
   if (res.ok) {
       const data = await res.json();
       return data;
@@ -51,7 +51,7 @@ regbtn.addEventListener('click', async ()=> {
     const name = document.querySelector('#name');
     const email = document.querySelector('#email');
 
-    const res = await fetch('http://43.203.182.213:8010/users',
+    const res = await fetch('http://52.79.137.65:8030/users',
         {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -77,7 +77,7 @@ loginbtn.addEventListener('click', async ()=> {
 
     const userid = document.querySelector('#uid');
     const passwd = document.querySelector('#pwd');
-    const res = await fetch('http://43.203.182.213:8010/login',
+    const res = await fetch('http://52.79.137.65:8030/login',
         {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
