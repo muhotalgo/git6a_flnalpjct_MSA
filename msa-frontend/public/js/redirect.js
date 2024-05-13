@@ -1,24 +1,24 @@
 // 페이지 리디렉션 자바스크립트
 
 // 로그인 되어있지 않으면 로그인 페이지로 리디렉션
-//const displayAfterLogin = () => {
-//    if (!localStorage.getItem('token')) {
-//        window.location.href = '/login.html';
-//        return false; // 로그인 페이지로 리디렉션될 경우 함수에서 false를 반환
-//    }
-//    return true; // 로그인 상태가 유효하면 true를 반환
-//};
+const displayAfterLogin = () => {
+   if (!localStorage.getItem('token')) {
+       window.location.href = '/login.html';
+       return false; // 로그인 페이지로 리디렉션될 경우 함수에서 false를 반환
+   }
+   return true; // 로그인 상태가 유효하면 true를 반환
+};
 
 // get user info
-// const getUserInfo = async () => {
-//     const res = await fetch('http://127.0.0.1:8020/users');
-//     if (res.ok) {
-//         const data = await res.json();
-//         return data;
-//     } else {
-//         throw new Error('사용자 정보 조회 실패!');
-//     }
-// };
+const getUserInfo = async () => {
+    const res = await fetch('http://127.0.0.1:8020/users');
+    if (res.ok) {
+        const data = await res.json();
+        return data;
+    } else {
+        throw new Error('사용자 정보 조회 실패!');
+    }
+};
 
 // 로그인 된 사용자 추출
 const displayUserInfo = () => {
@@ -56,7 +56,7 @@ window.addEventListener('load', async () => {
     try {
         const isLoggedIn = displayAfterLogin();
         if (isLoggedIn) { // 로그인 상태가 유효할 경우에만 실행
-            //const userinfo = await getUserInfo();
+            const userinfo = await getUserInfo();
             displayUserInfo();
         }
     } catch (e) {
